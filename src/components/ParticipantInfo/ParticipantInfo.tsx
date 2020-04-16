@@ -113,7 +113,7 @@ export default function ParticipantInfo({ participant, onClick, isSelected, chil
           <NetworkQualityLevel qualityLevel={networkQualityLevel} />
         </div>
         <div>
-          <AudioLevelIndicator audioTrack={audioTrack} background="white" />
+          {/*<AudioLevelIndicator audioTrack={audioTrack} background="white" />*/}
           {!isVideoEnabled && <VideocamOff />}
           {isScreenShareEnabled && <ScreenShare />}
           {isSelected && <PinIcon />}

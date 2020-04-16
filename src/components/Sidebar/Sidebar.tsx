@@ -13,7 +13,7 @@ import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     sidebar: {
-      maxWidth: '200px',
+      width: '200px',
       height: '100%',
       position: 'absolute',
       left: '0',
@@ -100,7 +100,7 @@ export default function Sidebar() {
           {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
         </form>
       ) : (
-        <h3>{roomName}</h3>
+        <h3></h3>
       )}
     </div>
   );
