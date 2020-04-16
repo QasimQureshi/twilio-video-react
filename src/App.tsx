@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
 
+import Sidebar from './components/Sidebar/Sidebar';
 import Controls from './components/Controls/Controls';
 import LocalVideoPreview from './components/LocalVideoPreview/LocalVideoPreview';
 import MenuBar from './components/MenuBar/MenuBar';
@@ -34,6 +35,7 @@ export default function App() {
       <MenuBar />
       <Main>
         {roomState === 'disconnected' ? <LocalVideoPreview /> : <Room />}
+        <Sidebar />
         <Controls />
       </Main>
       <ReconnectingNotification />

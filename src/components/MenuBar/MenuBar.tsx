@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 'auto',
     },
     form: {
-      display: 'flex',
+      display: 'none',
       flexWrap: 'wrap',
       alignItems: 'center',
       [theme.breakpoints.up('md')]: {
