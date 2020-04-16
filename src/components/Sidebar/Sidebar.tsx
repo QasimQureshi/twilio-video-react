@@ -100,7 +100,7 @@ export default function Sidebar() {
           {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
         </form>
       ) : (
-        <h3></h3>
+        <h3>{roomName}</h3>
       )}
     </div>
   );

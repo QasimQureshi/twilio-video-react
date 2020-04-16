@@ -34,23 +34,17 @@ export default function ParticipantStrip() {
   } = useVideoContext();
   const participants = useParticipants();
   const [selectedParticipant, setSelectedParticipant] = useSelectedParticipant();
-
+  debugger;
   return (
     <Container>
       <ScrollContainer>
-        <Participant
-          participant={localParticipant}
-          isSelected={selectedParticipant === localParticipant}
-          onClick={() => setSelectedParticipant(localParticipant)}
-        />
-        {participants.map(participant => (
+        {participants.length > 0 && (
           <Participant
-            key={participant.sid}
-            participant={participant}
-            isSelected={selectedParticipant === participant}
-            onClick={() => setSelectedParticipant(participant)}
+            participant={localParticipant}
+            isSelected={selectedParticipant === localParticipant}
+            onClick={() => setSelectedParticipant(localParticipant)}
           />
-        ))}
+        )}
       </ScrollContainer>
     </Container>
   );

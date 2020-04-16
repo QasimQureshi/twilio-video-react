@@ -95,7 +95,7 @@ export default function MenuBar() {
   return (
     <AppBar className={classes.container} position="static">
       <Toolbar className={classes.toolbar}>
-        {roomState === 'disconnected' ? (
+        {false ? (
           <form className={classes.form} onSubmit={handleSubmit}>
             {window.location.search.includes('customIdentity=true') || !user?.displayName ? (
               <TextField
@@ -107,9 +107,7 @@ export default function MenuBar() {
                 margin="dense"
               />
             ) : (
-              <Typography className={classes.displayName} variant="body1">
-                {user.displayName}
-              </Typography>
+              <Typography className={classes.displayName} variant="body1"></Typography>
             )}
             <TextField
               id="menu-room"
@@ -131,7 +129,7 @@ export default function MenuBar() {
             {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
           </form>
         ) : (
-          <h3>{roomName}</h3>
+          <h3>Twilio React demo</h3>
         )}
         <div className={classes.rightButtonContainer}>
           <LocalAudioLevelIndicator />
