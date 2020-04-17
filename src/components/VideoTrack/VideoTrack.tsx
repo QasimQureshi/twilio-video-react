@@ -4,6 +4,7 @@ import { styled } from '@material-ui/core/styles';
 import { Track } from 'twilio-video';
 
 const Video = styled('video')({
+  // width: '100%',
   maxHeight: '100%',
   objectFit: 'contain',
 });
@@ -12,9 +13,10 @@ interface VideoTrackProps {
   track: IVideoTrack;
   isLocal?: boolean;
   priority?: Track.Priority | null;
+  fullWidth?: boolean;
 }
 
-export default function VideoTrack({ track, isLocal, priority }: VideoTrackProps) {
+export default function VideoTrack({ track, isLocal, priority, fullWidth }: VideoTrackProps) {
   const ref = useRef<HTMLVideoElement>(null!);
 
   useEffect(() => {
@@ -35,7 +37,12 @@ export default function VideoTrack({ track, isLocal, priority }: VideoTrackProps
 
   // The local video track is mirrored.
   const isFrontFacing = track.mediaStreamTrack.getSettings().facingMode !== 'environment';
-  const style = isLocal && isFrontFacing ? { transform: 'rotateY(180deg)' } : {};
+  // const style = isLocal && isFrontFacing ? { transform: 'rotateY(180deg)' } : {};
+
+  const style = {
+    transform: isLocal && isFrontFacing ? 'rotateY(180deg)' : 'rotateY(0deg',
+    width: fullWidth ? '100%' : 'auto',
+  };
 
   return <Video ref={ref} style={style} />;
 }

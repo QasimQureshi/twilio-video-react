@@ -9,6 +9,7 @@ interface ParticipantTracksProps {
   disableAudio?: boolean;
   enableScreenShare?: boolean;
   videoPriority?: Track.Priority | null;
+  fullWidth?: boolean;
 }
 
 /*
@@ -24,6 +25,7 @@ export default function ParticipantTracks({
   disableAudio,
   enableScreenShare,
   videoPriority,
+  fullWidth,
 }: ParticipantTracksProps) {
   const { room } = useVideoContext();
   const publications = usePublications(participant);
@@ -46,6 +48,7 @@ export default function ParticipantTracks({
           participant={participant}
           isLocal={isLocal}
           disableAudio={disableAudio}
+          fullWidth={fullWidth}
           videoPriority={videoPriority}
         />
       ))}

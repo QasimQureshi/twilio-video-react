@@ -17,10 +17,17 @@ interface PublicationProps {
   participant: Participant;
   isLocal: boolean;
   disableAudio?: boolean;
+  fullWidth?: boolean;
   videoPriority?: Track.Priority | null;
 }
 
-export default function Publication({ publication, isLocal, disableAudio, videoPriority }: PublicationProps) {
+export default function Publication({
+  publication,
+  isLocal,
+  disableAudio,
+  videoPriority,
+  fullWidth,
+}: PublicationProps) {
   const track = useTrack(publication);
 
   if (!track) return null;
@@ -32,6 +39,7 @@ export default function Publication({ publication, isLocal, disableAudio, videoP
           track={track as IVideoTrack}
           priority={videoPriority}
           isLocal={track.name === 'camera' && isLocal}
+          fullWidth={fullWidth}
         />
       );
     case 'audio':

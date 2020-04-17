@@ -34,7 +34,7 @@ export default function ParticipantStrip() {
   } = useVideoContext();
   const participants = useParticipants();
   const [selectedParticipant, setSelectedParticipant] = useSelectedParticipant();
-  debugger;
+
   return (
     <Container>
       <ScrollContainer>
